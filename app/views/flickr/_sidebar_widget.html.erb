@@ -1,0 +1,13 @@
+
+<div class="flickr">
+  <ul>
+    <% @photos.each do |row| %>
+      <li>
+       		<% row.each do |p| %>
+          <%= link_to(image_tag(p[:url], title: p[:title]), p[:photo_page], target: :_blank, class: "flickr_photo") %>
+
+        <% end %>
+      </li>
+      <% end %>
+  </ul>
+</div>

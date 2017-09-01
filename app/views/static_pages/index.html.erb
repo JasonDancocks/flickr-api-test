@@ -1,0 +1,11 @@
+<h1> Flickr feed </h1>
+
+<%= form_tag(root_path, method: :get) do %>
+<%= label_tag(:user_id, "Enter Flickr ID") %>
+<%= text_field_tag(:user_id) %>
+<%= submit_tag("Search") %>
+<% end %>
+
+<% if @user_id %>
+	<%= render_flickr_sidebar_widget(@user_id) %>
+	<% end %>
